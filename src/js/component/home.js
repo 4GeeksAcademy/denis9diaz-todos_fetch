@@ -5,7 +5,7 @@ const Home = () => {
     const [todos, setTodos] = useState([]);
 
     const inputKeyPress = (event) => {
-        if (event.key === "Enter" && input.trim() !== "") {
+        if (event.key === "Enter") {
             setTodos([...todos, { label: input }]);
             setInput("");
         }
