@@ -17,9 +17,12 @@ const Home = () => {
         };
     };
 
+    const deleteAllTodos = () => {
+        setTodos([]);
+    };
+
     const urlTodos = "https://playground.4geeks.com/apis/fake/todos/user/denis9diaz";
 
-    //GET
     useEffect(() => {
         getTask();
     }, []);
@@ -31,7 +34,6 @@ const Home = () => {
             .catch((err) => (err));
     };
 
-    //POST
     useEffect(() => {
         newTask();
     }, [todos]);
@@ -49,7 +51,6 @@ const Home = () => {
             .catch((err) => (err));
     };
 
-    //PUT
     useEffect(() => {
         updateTodo();
     }, []);
@@ -94,6 +95,11 @@ const Home = () => {
                 ))}
                 <li className="tasks list-group-item">{todos.length} tasks</li>
             </ul>
+            <div className="divCenter">
+                <button className="btn deleteAllButton" onClick={deleteAllTodos}>
+                    Delete All
+                </button>
+            </div>
         </div>
     );
 };
